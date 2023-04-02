@@ -1,5 +1,8 @@
 package Homework1;
 
+/**
+ * Abstract class that does not fully implements drinks.
+ */
 public abstract class Drink {
     private String name;
     private double coast;

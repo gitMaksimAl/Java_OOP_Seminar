@@ -13,9 +13,10 @@ public class HotDrinkMachine implements VendingMachine {
 
     @Override
     public Drink getProduct(String name) {
-        return this.getProduct(name, 13.0, 83);
+        return this.getProduct(name, 0, 0);
     }
 
+    // Method overload
     public HotDrink getProduct(String name, double coast, int temp) {
         for (HotDrink item: drinks) {
             if (
