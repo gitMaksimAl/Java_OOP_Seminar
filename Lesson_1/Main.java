@@ -14,5 +14,6 @@ public class Main {
         box2.dropProduct(new Bar("Mars", 9.1f, 101));
     
         for (Product item: VendingMachine.products) System.out.println(item.toString());
+        System.out.println(VendingMachine.products.toString());
     }
 }
