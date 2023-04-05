@@ -1,10 +1,15 @@
 package Homework_2;
 
 public class Operand implements Operator{
-    private double a;
+    protected double a;
 
-    public Operand(double d) {
-        this.a = d;
+    public Operand(String input) {
+        try {
+            this.a = Double.parseDouble(input);
+        } catch (Exception e) {
+            System.err.println("Can`t parse line, set to 0.");
+            this.a = 0;
+        }
     }
 
     @Override
