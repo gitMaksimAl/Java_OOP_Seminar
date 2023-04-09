@@ -5,21 +5,29 @@ import java.util.List;
 
 public class StudentsGroupIterator implements Iterator<Student> {
     private List<Student> studs;
-    private int couter;
+    private int counter;
 
     public StudentsGroupIterator(List<Student> students) {
         this.studs = students;
-        this.couter = 0;
+        this.counter = 0;
     }
 
     @Override
     public boolean hasNext() {
-        return couter < studs.size();
+        return counter < studs.size();
     }
 
     @Override
     public Student next() {
         if (!hasNext()) return null;
-        return studs.get(couter++);
+        return studs.get(counter++);
+    }
+
+    public Student peek() {
+        return studs.get(counter);
+    }
+
+    public void reset() {
+        counter = 0;
     }
 }

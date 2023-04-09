@@ -4,6 +4,7 @@ public class Student {
     private String name;
     private String lastName;
     private int groupId;
+    private double GPA;
 
     public Student(String name, String lastName, int group) {
         this.name = name;
@@ -26,5 +27,13 @@ public class Student {
 
     public int getGroupId() {
         return groupId;
+    }
+
+    public void setGPA(double gPA) {
+        GPA = gPA;
+    }
+
+    public double getGPA() {
+        return GPA;
     }
 }
