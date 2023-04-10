@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Group implements Iterable<Student>, Comparable<Student> {
+public class Group implements Iterable<Student>, Comparable<Group> {
     private List<Student> studs;
 
     public Group(List<Student> students) {
@@ -21,9 +21,10 @@ public class Group implements Iterable<Student>, Comparable<Student> {
     }
 
     @Override
-    public int compareTo(Student o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    public int compareTo(Group group) {
+        if (this.studs.size() > group.getStuds().size()) return 1;
+        else if (this.studs.size() < group.getStuds().size()) return -1;
+        else return 0;
     }
 
     public void setGPAs(StudentsGroupIterator it) {

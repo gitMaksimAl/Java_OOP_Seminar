@@ -23,13 +23,13 @@ public class Main {
         while (it.hasNext()) System.out.println(it.next());
         // iterator ended !!!!
 
-        System.out.println("-----------Output divisor-----------");
+        System.out.println("-----------Output spliter-----------");
         it.reset();
         groupOne.setGPAs(it);
 
         Collections.sort(groupOne.getStuds(), new StudentComparator());
         it.reset();
-        System.out.println("-----------Output divisor-----------");
+        System.out.println("-----------Output spliter-----------");
         while (it.hasNext()) System.out.println(it.next());
     }
 }
