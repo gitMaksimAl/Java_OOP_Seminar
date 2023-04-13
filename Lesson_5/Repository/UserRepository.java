@@ -1,15 +1,25 @@
 package Lesson_5.Repository;
 
-import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import Lesson_5.Model.User;
 
 public class UserRepository {
+    private List<User> users = new ArrayList<>();
     public void saveUser(User user) {
-        try(FileWriter writer = new FileWriter("user.txt", true)) {
-            writer.write(user.toString());
-        } catch (Exception e) {
-            System.out.println("err in repo");
-        }
+        users.add(user);
+    }
+
+    public void delUser(User user) {
+        users.remove(user);
+    }
+
+    public User getUser(int index) {
+        return users.get(index);
+    }
+
+    public String getInfo() {
+        return users.toString();
     }
 }

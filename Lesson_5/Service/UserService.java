@@ -3,5 +3,8 @@ package Lesson_5.Service;
 import Lesson_5.Model.User;
 
 public interface UserService {
-    void saveUser(User user);
+    void addUser(User user);
+    void delUser(User user);
+    User getUser(int index);
+    String getUsers();
 }
