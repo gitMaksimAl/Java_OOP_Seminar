@@ -1,4 +1,4 @@
-package Homework1;
+package Homework_4;
 
 public class HotDrink extends Drink {
     private int temperature;
