@@ -24,5 +24,6 @@ public class UserView {
         System.out.println("Please enter number of user to update and data.");
         controller.updateUser(Integer.parseInt(scanner.nextLine()), scanner.nextLine(), scanner.nextInt());
         System.out.println(controller.getUsersInfo());
+        scanner.close();
     }
 }
