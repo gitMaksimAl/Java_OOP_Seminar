@@ -9,37 +9,15 @@ public class Worker {
     private int age;
     private int cabinet;
 
-    public Worker(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    public String getName() {return name;}
 
-    public Worker(String name) {
-        this.name = name;
-    }
-    
-    public Worker(int age) {
-        this.age = age;
-    }
+    public int getAge() {return age;}
 
-    public Worker(String name, int age, int cabinet) {
-        this.name = name;
-        this.age = age;
-        this.cabinet = cabinet;
-    }
-    
-    public Worker(String name, int cabinet) {
-        this.name = name;
-        this.cabinet = cabinet;
-    }
+    public void setName(String name) {this.name = name;}
 
-    public String getName() {
-        return name;
-    }
+    public void setAge(int age) {this.age = age;}
 
-    public int getAge() {
-        return age;
-    }
+    public void setCabinet(int cabinet) {this.cabinet = cabinet;}
 
     @Override
     public String toString() {
