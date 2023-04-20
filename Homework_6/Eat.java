@@ -2,6 +2,7 @@ package Homework_6;
 
 public class Eat extends Product {
     private float weight;
+    protected int amount;
 
     public Eat(String name, float coast, float weight) {
         this.name = name;
