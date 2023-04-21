@@ -1,7 +1,5 @@
 package Homework_6;
 
-import java.util.Scanner;
-
 import Homework_6.Tank.SolidTank;
 
 /**
