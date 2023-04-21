@@ -1,7 +1,6 @@
 package Homework_6.Tank;
 
 import Homework_6.Eat;
-import Homework_6.Product;
 
 /**
  * Дочерний класс - SolidTank - реализует методы работы с твердыми продуктами.
@@ -11,20 +10,23 @@ public class SolidTank extends Tank<Eat>{
     private int capacity;
     private int currentCapacity;
 
-    public void setCapacity(int capacity) {
+    public SolidTank(int capacity) {
         this.capacity = capacity;
+        this.currentCapacity = 0;
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public Product emptyTank(Eat product) {
+    public Eat emptyTank(int index) {
         if (container.isEmpty())
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("Empty container.");
         else {
+            Eat product = container.get(index);
+            container.remove(index);
             currentCapacity--;
-            return container.get(0);
+            return product;
         }
     }
 
@@ -35,7 +37,7 @@ public class SolidTank extends Tank<Eat>{
         } else System.out.println("Tank is full.");
     }
 
-    void fillTank(Eat product, int amount) {
+    public void fillTank(Eat product, int amount) {
         if (currentCapacity + amount < capacity) {
             container.add(product);
             currentCapacity += amount;
@@ -44,9 +46,10 @@ public class SolidTank extends Tank<Eat>{
 
     @Override
     public String toString() {
-        return String.format("Tank{product='%s', capacity='%dpieces'}",
+        return String.format("Tank{product='%s', capacity='%dpieces, currentCapacity='%d'}",
             super.toString(),
-            getCapacity()
+            getCapacity(),
+            this.currentCapacity
         );
     }
 }

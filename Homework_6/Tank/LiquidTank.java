@@ -9,20 +9,23 @@ public class LiquidTank extends Tank<Drink>{
     private float capacity;
     private float currentCapacity;
 
-    public void setCapacity(float capacity) {
+    public LiquidTank(float capacity) {
         this.capacity = capacity;
+        this.currentCapacity = 0;
     }
 
     public float getCapacity() {
         return capacity;
     }
 
-    public  Drink emptyTank(Drink product) {
+    public  Drink emptyTank(int index) {
         if (container.isEmpty())
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("Empty container.");
         else {
+            Drink product = container.get(index);
+            container.remove(index);
             currentCapacity -= product.getVolume();
-            return container.get(0);
+            return product;
         }
     }
 
@@ -35,9 +38,10 @@ public class LiquidTank extends Tank<Drink>{
 
     @Override
     public String toString() {
-        return String.format("Tank{product='%s', capacity='%.2fLiters'}",
+        return String.format("Tank{product='%s', capacity='%.2fLiters', currentCapacity='%.2f'}",
             super.toString(),
-            getCapacity()
+            getCapacity(),
+            this.currentCapacity
         );
     }
 }

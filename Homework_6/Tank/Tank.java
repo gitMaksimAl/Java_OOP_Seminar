@@ -5,18 +5,14 @@ import java.util.List;
 
 import Homework_6.Product;
 /**
- * Абстрактный класс - емкость - не зависит от типов содержимых в нем продуктов.
+ * Класс - емкость - не зависит от типов содержимых в нем продуктов.
  */
-public class Tank<T extends Product> {
+public abstract class Tank<T extends Product> {
     protected  List<T> container = new ArrayList<>();
 
-    public Product emptyTank(T product) {
-        return container.get(0);
-    }
+    abstract public Product emptyTank(int index);
 
-    public void fillTank(T product) {
-        container.add(product);
-    }
+    abstract public void fillTank(T product);
 
     public List<T> getProducts() {
         return container;

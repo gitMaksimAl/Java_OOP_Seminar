@@ -21,4 +21,9 @@ public class Acceptor {
     public void getBill(int bill) {
         deposit += (float)bill;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Acceptor{deposit='%.2f'}", this.deposit);
+    }
 }

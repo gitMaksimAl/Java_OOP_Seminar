@@ -1,24 +1,43 @@
 package Homework_6.ControlPanel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import Homework_6.Product;
 
-public class Panel<T extends Product> {
-    private List<String> buttons = new ArrayList<>();
+/**
+ * Панель с кнопками. Необходим список продуктов для инициализации.
+ */
+public class Panel {
+    Map<Integer, String> buttons = new HashMap<>();
 
-    public Panel(List<T> products) {
-        for (T product: products) {
-            buttons.add(product.getName());
-        }
+    public void addButton(Product product, int num) {
+            buttons.put(num, String.format("%s   %.2f",
+                product.getName(),
+                product.getCoast())
+            );
     }
 
-    public String pushButton(int index) {
-        return buttons.get(index);
+    public boolean pushButton(int index) {
+        return buttons.containsKey(index);
     }
 
-    public List<String> getButtons() {
-        return buttons;
+    public String getButtons() {
+        if (buttons.isEmpty()) return "Machine is empty.";
+        else return buttons.toString();
+    }
+
+    public void resetButtons() {
+        this.buttons.clear();
+        this.buttons = new HashMap<>();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Panel{buttons='%s'}",
+            this.buttons.toString()
+        );
     }
 }

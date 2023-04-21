@@ -6,12 +6,13 @@ package Homework_6;
 public class DeliveryWindow {
 
     public static void giveProduct(Product product) {
-        int packageSize = product.getName().length() + 6;
+        int packageSize = product.getName().length() * 7;
         for (int i = 0; i < packageSize; i++)
             System.out.print('-');
-        System.out.printf("| %s |\n", product);
+        System.out.printf("\n| %s |\n", product);
         for (int i = 0; i < packageSize; i++)
             System.out.print('-');
+        System.out.println();
     }
 
 }
