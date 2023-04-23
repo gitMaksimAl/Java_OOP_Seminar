@@ -9,9 +9,7 @@ panel = Panel()
 panel.add_button(drink, 1)
 panel.add_button(eat, 2)
 
-product = Product('Tea', 5.55)
-print(Drink(product))
-DeliveryWindow.give_product(Product(eat))
-DeliveryWindow.give_product(Product(drink))
+DeliveryWindow.give_product(eat)
+DeliveryWindow.give_product(drink)
 
 print(drink, eat, acceptor, panel)

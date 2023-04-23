@@ -1,23 +1,17 @@
-from abc import ABC, abstractmethod
+class Product(object):
 
-
-class Product(ABC):
-    """
-    Абстрактный класс Product - основная модель с которой работает автомат.
-    """
-
-    @abstractmethod
     def __init__(self, name: str, cost: float):
         self._name = name
         self._cost = cost
 
     @property
-    @abstractmethod
     def name(self) -> str: return self._name
 
     @property
-    @abstractmethod
     def cost(self) -> float: return self._cost
+
+    def __str__(self):
+        return f"Product{{name='{self._name}', cost='{self._cost}'}}"
 
 
 class Drink(Product):

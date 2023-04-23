@@ -49,6 +49,9 @@ class Panel(object):
 class DeliveryWindow(object):
 
     @staticmethod
-    def give_product(self, product: Product) -> None:
-        box_size = len(product.name) * 7
-        print('-' * box_size, f"\n| {product} |\n", '-' * box_size)
+    def give_product(product: Product) -> None:
+        if isinstance(product, Product):
+            box_size = len(product.name) * 7
+            print('-' * box_size, f"| {product} |", '-' * box_size, sep='\n')
+        else:
+            raise TypeError
