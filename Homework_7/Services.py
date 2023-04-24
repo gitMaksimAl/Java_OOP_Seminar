@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 from Model import Product
 
 
 class Acceptor(object):
 
     def __init__(self) -> None:
-        self.__deposit = 0
+        self.__deposit: float = 0.0
 
     @property
     def deposit(self) -> float:
